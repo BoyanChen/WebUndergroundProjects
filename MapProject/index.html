@@ -12,20 +12,27 @@
             height: 100vh;
         }
         img {
-            max-width: 100%;
+            max-width: 25%;
         }
         video {
             max-width: 100%;
         }
+
+        .projectContainer{
+            background-image: url("MTA Sketch-01.jpg");
+            width: 100vw;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
     </style>
 </head>
 <body>
-<main>
     <!-- IMAGE -->
-    <img
-            src="https://placeholders-for-codepens.s3.us-east-2.amazonaws.com/NY_Manhattan_DigitalPanels_CatchTrain.jpg"
-            alt=""
-    />
+        <div class="projectContainer" id="mapSketch">
+        </div>
 
     <!-- VIDEO -->
     <!-- <video
@@ -33,7 +40,7 @@
               autoplay
               muted
           ></video> -->
-</main>
+</body>
 
 <script>
     setTimeout(refresh, 15000)
