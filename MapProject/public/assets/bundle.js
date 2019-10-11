@@ -127,19 +127,6 @@ function main(){
 
 
     var today = new Date()
-    // var hh = today.getHours()
-    // var mm = today.getMinutes()
-    //
-    // var url = ""
-    // if(hh < 10 && mm <10){
-    //     url = 'https://mtaapi.herokuapp.com/times?hour=0'+ today.getHours() + '&minute=0'+ today.getMinutes();
-    // }else if(hh > 10 && mm < 10){
-    //     url = 'https://mtaapi.herokuapp.com/times?hour='+ today.getHours() + '&minute=0'+ today.getMinutes();
-    // }else if(hh < 10 && mm > 10){
-    //     url = 'https://mtaapi.herokuapp.com/times?hour=0'+ today.getHours() + '&minute='+ today.getMinutes();
-    // }else if(hh >= 10 && mm >= 10){
-    //     url = 'https://mtaapi.herokuapp.com/times?hour='+ today.getHours() + '&minute='+ today.getMinutes();
-    // }
 
     if(hh < today.getHours()){
         if(mm < 50){
