@@ -4,6 +4,12 @@ console.log("i'm here!");
 var hh = 0
 var mm = 0
 
+var ifReset = false;
+
+var refreash = setInterval(main,2000);
+
+var date = new Date();
+
 var days = ['','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmM5N250cyIsImEiOiJjazFjcTQ2M3cwMDlmM2hudWl3dXVqdmZpIn0.Pq8YToDAlFHkMZdowA4uvw';
@@ -43,7 +49,10 @@ map.on('load',function(){
 
 })
 
-setInterval(main,2000);
+
+
+
+
 
 
 function draw(geojsonFile) {
@@ -165,6 +174,7 @@ function main(){
     }else if (hh >= today.getHours() && mm >= today.getMinutes()-10){
         hh = today.getHours()
         mm = today.getMinutes()
+        clearInterval(refreash)
     }
 
     console.log(hh + ":" + mm)
