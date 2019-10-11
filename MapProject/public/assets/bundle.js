@@ -20,6 +20,27 @@ var map = new mapboxgl.Map({
 
 map.on('load',function(){
     map.fadeDuration = 3000
+    var mapLayer = map.getLayer('arrival-heat');
+    var line = "https://boyanchen.github.io/WebUndergroundProjects/MapProject/public/assets/Subway%20Lines.geojson"
+    map.addLayer({
+        id: "stationsLine",
+        type: "line",
+        source: {
+            type: "geojson",
+            data: line
+        },
+        layout: {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        paint: {
+            // 'line-color': 'rgba(242,230,61,40)',
+            'line-color': '#F2E63D',
+            'line-opacity':0.4,
+            'line-width': 2,
+        }
+    });
+
 })
 
 setInterval(main,2000);
@@ -29,8 +50,6 @@ function draw(geojsonFile) {
 
     var mapLayer = map.getLayer('arrival-heat');
                 if(typeof mapLayer !== 'undefined') {
-        // Remove map layer & source.
-        //             map.setPaintProperty('points', 'circle-opacity', 0)
         map.removeLayer('arrival-heat').removeSource('pointsSource');
     }
 
@@ -54,6 +73,7 @@ function draw(geojsonFile) {
     // setTimeout(function() {
     //     map.setPaintProperty('points', 'circle-opacity', 1);
     // }, 1)
+
 
 
     map.addLayer({
@@ -98,13 +118,17 @@ function draw(geojsonFile) {
             },
             // decrease opacity to transition into the circle layer
             'heatmap-opacity': {
-                default: 1,
+                default: 0,
                 stops: [
                     [14, 1],
                     [15, 0]
                 ]
             },
+            "heatmap-opacity-transition":{
+                duration: 1500
+            }
         }
+
     }, 'waterway-label')
 
 }
@@ -207,6 +231,10 @@ function main(){
 
                 // draw();
                 console.log("finished!",geojson);
+                var carNum = document.getElementById("carNum")
+                carNum.innerText = point.length
+                var arrivals = document.getElementById("arrivals");
+                arrivals.innerText = "Number of Trains Stopping"
                 draw(geojson)
             }
         })
