@@ -172,9 +172,11 @@ function main(){
         hh = today.getHours()
         mm+=10
     }else if (hh >= today.getHours() && mm >= today.getMinutes()-10){
-        hh = today.getHours()
-        mm = today.getMinutes()
-        clearInterval(refreash)
+        // hh = today.getHours()
+        // mm = today.getMinutes()
+        hh = 0
+        mm = 0
+        // clearInterval(refreash)
     }
 
     console.log(hh + ":" + mm)
