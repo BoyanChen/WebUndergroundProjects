@@ -16,7 +16,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicmM5N250cyIsImEiOiJjazFjcTQ2M3cwMDlmM2hudWl3d
 var map = new mapboxgl.Map({
     container: 'map', // container id
     // style: 'mapbox://styles/rc97nts/ck1cq5xlb1m0k1cppa0p5j7nb', // stylesheet location
-    style: 'mapbox://styles/rc97nts/ck1lhhakz9s351ck2lwmsu79d',
+    // style: 'mapbox://styles/rc97nts/ck1lhhakz9s351ck2lwmsu79d',
+    style: 'mapbox://styles/rc97nts/ck1p21wh01s701coc5ka5lipk',
     attributionControl: false,
     center: [-73.9324, 40.7829], // starting position [lng, lat]
     zoom: 12 // starting zoom
@@ -42,7 +43,7 @@ map.on('load',function(){
         paint: {
             // 'line-color': 'rgba(242,230,61,40)',
             'line-color': '#F2E63D',
-            'line-opacity':0.4,
+            'line-opacity':1,
             'line-width': 2,
         }
     });
@@ -50,7 +51,9 @@ map.on('load',function(){
 })
 
 
-
+$(document).ready(function() {
+    $('video').prop('muted',true).play()
+});
 
 
 
