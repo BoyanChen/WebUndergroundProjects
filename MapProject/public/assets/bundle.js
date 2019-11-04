@@ -28,7 +28,8 @@ var map = new mapboxgl.Map({
 map.on('load',function(){
     map.fadeDuration = 3000
     var mapLayer = map.getLayer('arrival-heat');
-    var line = "https://boyanchen.github.io/WebUndergroundProjects/MapProject/public/assets/Subway%20Lines.geojson"
+    var line = "https://github.com/BoyanChen/WebUndergroundProjects/blob/master/MapProject/public/assets/Community%20Districts.geojson"
+    console.log(line);
     map.addLayer({
         id: "stationsLine",
         type: "line",
