@@ -1,63 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <script>
-            (function(d) {
-                var config = {
-                        kitId: 'xbh8bdp',
-                        scriptTimeout: 3000,
-                        async: true
-                    },
-                    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-            })(document);
-        </script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+</head>
+<link rel="stylesheet" href="assets/bundle.css" />
+<body>
+<main>
+    <!-- IMAGE -->
+    <!-- <img
+src="https://placeholders-for-codepens.s3.us-east-2.amazonaws.com/NY_Manhattan_DigitalPanels_CatchTrain.jpg"
+alt=""
+/> -->
 
-    <link rel="stylesheet" href="https://use.typekit.net/yok2hxm.css">
-    <link rel="stylesheet" href="assets/bundle.css" />
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css' rel='stylesheet' />
-    <body>
-    <div id="inputFiled">
-        <h1>See all subway stations where a train is stopping at the time specified</h1>
-        <!--<label for="hour">HH</label>-->
-    <input type="text"
-           id="hour"
-           value="12">
-        <p>:</p>
-        <!--<label for="minutes">MM</label>-->
-    <input type="text"
-           id="minutes"
-           value="00">
-
-    </div>
-    <div id="btnContainer">
-    <button type="button"
-            onclick="myFunction()">
-        Check
-    </button>
-    </div>
-    <canvas style="border: solid black 2px" id="canvas" width="auto" height="auto"></canvas>\
-
-
-    <div id='map'></div>
-    <div id="titles">
-        <h1 class="title" id="main">NYC SUBWAY HEAT MAP</h1>
-        <h1 class="title" id="date"></h1>
-        <h1 class="title" id="time"></h1>
-        <br>
-        <h1 class="title" id="arrivals"></h1>
-        <h1 class="title" id="carNum"></h1>
-    </div>
-
-    <video width="100%" height="auto" controls autoplay controls loop>
-        <source src="assets/TopographyBG_2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-
-        <script src="assets/bundle.js"></script>
-    </body>
+    <!-- VIDEO -->
+    <!--<video-->
+    <!--src="https://placeholders-for-codepens.s3.us-east-2.amazonaws.com/Right_JetBluePR.mp4"-->
+    <!--autoplay-->
+    <!--muted-->
+    <!--loop-->
+    <!--&gt;</video>-->
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+<script src="assets/sketch.js"></script>
+<script src="assets/particles.js"></script>
+</body>
 </html>
