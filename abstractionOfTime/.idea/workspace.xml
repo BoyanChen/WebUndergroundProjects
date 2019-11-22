@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcf5fe84-fb80-4eb8-b361-a5fa6c2b56e3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../MapProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MapProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MapProject/MTA Sketch-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MapProject/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/config/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/src/styles/loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/src/styles/loader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,7 +44,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="37" />
-          <entry key="gitignore" value="14" />
+          <entry key="gitignore" value="15" />
           <entry key="html" value="131" />
           <entry key="js" value="1877" />
         </counts>
@@ -60,7 +54,7 @@
           <entry key="CSS" value="37" />
           <entry key="HTML" value="131" />
           <entry key="JavaScript" value="1877" />
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
     </session>
@@ -94,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -194,8 +188,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="138" />
+    <option name="y" value="272" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
@@ -272,18 +267,18 @@
       <updated>1574217122606</updated>
       <workItem from="1574217124027" duration="241000" />
       <workItem from="1574367140759" duration="6127000" />
-      <workItem from="1574442172072" duration="5128000" />
+      <workItem from="1574442172072" duration="5489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11496000" />
+    <option name="totallyTimeSpent" value="11857000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="138" y="272" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -297,7 +292,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32810867" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34429824" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -359,7 +354,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
