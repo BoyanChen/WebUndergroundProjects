@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb607c-faf7-44a8-9f9c-61929901c8ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abstractionOfTime/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../abstractionOfTime/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abstractionOfTime/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../abstractionOfTime/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -157,8 +158,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="138" />
-    <option name="y" value="272" />
+    <option name="x" value="29" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
