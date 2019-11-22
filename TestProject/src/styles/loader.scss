@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+main {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+img {
+  max-width: 25%;
+}
+video {
+  max-width: 100%;
+}
+
+.projectContainer{
+  background-image: url("MTA Sketch-01.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
