@@ -108,8 +108,8 @@ function init() {
 
     uniforms = {
         time: {type: 'f', value: 2.0},
-        texture:   { type: "t", value: THREE.ImageUtils.loadTexture( "https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/ballon.jpg" ) },
-        texture2:   { type: "t", value: THREE.ImageUtils.loadTexture( "https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/town-texture.jpg" ) },
+        texture:   { type: "t", value: THREE.ImageUtils.loadTexture( "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/14th_Street-IRT_Platform.jpg/300px-14th_Street-IRT_Platform.jpg" ) },
+        texture2:   { type: "t", value: THREE.ImageUtils.loadTexture( "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/14_Street-Union_Square_IRT_003.JPG/300px-14_Street-Union_Square_IRT_003.JPG" ) },
         rate : {type: 'f', value: 0.0}
     };
 
