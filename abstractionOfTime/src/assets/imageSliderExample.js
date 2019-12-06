@@ -1,5 +1,10 @@
 var camera, scene, renderer;
 
+var mmHandR = 15;
+var mmSpeed = 0.24;
+
+
+
 var mesh;
 var shaderValue = {rate: 0};
 
@@ -12,7 +17,7 @@ animate();
 
 function init() {
     THREE.ImageUtils.crossOrigin = "Anonymous";
-    camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 300 );
     // reset camera
     camera.position.x = 0;
     camera.position.y = 0;
@@ -108,8 +113,9 @@ function init() {
 
     uniforms = {
         time: {type: 'f', value: 2.0},
-        texture:   { type: "t", value: THREE.ImageUtils.loadTexture( "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/14th_Street-IRT_Platform.jpg/300px-14th_Street-IRT_Platform.jpg" ) },
-        texture2:   { type: "t", value: THREE.ImageUtils.loadTexture( "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/14_Street-Union_Square_IRT_003.JPG/300px-14_Street-Union_Square_IRT_003.JPG" ) },
+        texture:   { value: new THREE.Color("red") },
+        texture2:   { value: new THREE.Color("purple") },
+
         rate : {type: 'f', value: 0.0}
     };
 
@@ -136,6 +142,11 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
 
+    var mmGeometry = new THREE.SphereGeometry(1,20,20);
+    var mmMaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    var mmHand = new THREE.Mesh(mmGeometry,mmMaterial);
+
+    scene.add(mmHand);
 }
 
 function animate() {
