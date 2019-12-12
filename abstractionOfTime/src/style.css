@@ -10,3 +10,20 @@ canvas {
     width: 100%;
     height: 100%;
 }
+
+.container{
+    /*showcase*/
+    /*width:100%;*/
+
+    /*for adjustment*/
+    width: 30%;
+
+    margin-left: 35%;
+}
+
+.gui_c{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

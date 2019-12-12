@@ -4,14 +4,29 @@
 var ctx = canvas_1.getContext("2d");
 var TWO_PI = 2 * Math.PI;
 
+const mobile = ( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+);
+
+if(mobile){
+    canvas_1.width = 720;
+    canvas_1.height = 450;
+}
+
 //Flag for x direction flow
 var flow = false;
 //Number of elements
 var discCount;
 
-//setup particles
-discCount = 5000;
-
+if(mobile){
+    discCount = 100;
+}else{
+    discCount = 1000;
+}
 //Colours from:
 //https://krazydad.com/tutorials/makecolors.php
 var red = [];
@@ -127,19 +142,21 @@ function computeCurl(x, y){
 
 //The step to start with. See below.
 var initial_step;
-
-initial_step = 2500;
-
+if(mobile){
+    initial_step = 300;
+}else{
+    initial_step = 1000;
+}
 
 //Different values for velocity, colour etc.
 var variables = {
-    speed: 0.24,
-    fade: 0,
+    speed: 0.5,
+    fade: 0.1,
     //The step controls the zoom of the noise field. A large value creates bigger vortices, a smaller value leads to more features
     step: initial_step,
     particle_size: 1.5,
-    rainbow: false,
-    colour: '#548cbc'
+    rainbow: true,
+    colour: '#ff9500'
 }
 var reset_button = { reset:function(){
         variables.speed = 0.5;
@@ -168,9 +185,11 @@ var random_button = { random:function(){
         ctx.fillStyle = "rgb(17,27,68)";
         ctx.fillRect(0,0,canvas_1.width, canvas_1.height);
         variables.speed = 0.1 + Math.random() * 0.9;
-
-        variables.step = Math.round(10 + Math.random() * 590);
-
+        if(!mobile){
+            variables.step = Math.round(10 + Math.random() * 2990);
+        }else{
+            variables.step = Math.round(10 + Math.random() * 590);
+        }
         variables.particle_size = 0.1 + Math.random() * 4.9;
         variables.rainbow = false;
         var c = Math.round(Math.random() * discCount);
@@ -183,13 +202,16 @@ var random_button = { random:function(){
         }
     }};
 
-// dat.gui library controls
+//dat.gui library controls
 var gui = new dat.GUI({ autoPlace: false });
 
 var customContainer = document.getElementById('gui_container');
 customContainer.appendChild(gui.domElement);
-
-gui.add(variables, 'step').min(10).max(600).step(5).listen().onChange(function(value) { clear_button.clear();});
+if(!mobile){
+    gui.add(variables, 'step').min(10).max(3000).step(10).listen().onChange(function(value) { clear_button.clear();});
+}else{
+    gui.add(variables, 'step').min(10).max(600).step(5).listen().onChange(function(value) { clear_button.clear();});
+}
 gui.add(variables, 'speed').min(0.0).max(1.0).step(0.01).listen();
 gui.add(variables, 'particle_size').min(0.1).max(5).step(0.1).listen();
 gui.add(variables, 'fade').min(0.0).max(1.0).step(0.01).listen();
@@ -199,23 +221,16 @@ gui.add(random_button,'random');
 gui.add(reset_button,'reset');
 gui.add(clear_button,'clear');
 gui.close();
+variables.fade = 0.0;
 
-//
-variables.speed = 0.5;
-variables.step = 1230;
-variables.fade = 0.01;
-variables.particle_size = 2;
-variables.rainbow = false;
-variables.colour = '#548CBC';
-
-ctx.fillStyle = "rgb(253,242,242)";
+ctx.fillStyle = "rgb(17,27,68)";
 ctx.fillRect(0,0,canvas_1.width, canvas_1.height);
 
 //********************** DRAW **********************
 function draw() {
 
     //Draw over previous frame with a rectangle of variable transparency
-    ctx.fillStyle = "rgba(0,0,0, "+variables.fade+")";
+    ctx.fillStyle = "rgba(17,27,68, "+variables.fade+")";
     ctx.fillRect(0,0,canvas_1.width, canvas_1.height);
 
     move();
