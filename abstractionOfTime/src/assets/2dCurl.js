@@ -10,13 +10,17 @@ var flow = false;
 var discCount;
 
 //setup particles
-discCount = 5000;
+discCount = 4000;
 
 //Colours from:
 //https://krazydad.com/tutorials/makecolors.php
 var red = [];
 var grn = [];
 var blu = [];
+
+var hue;
+var saturation;
+var lightness;
 
 center = 128;
 width = 127;
@@ -184,35 +188,46 @@ var random_button = { random:function(){
     }};
 
 // dat.gui library controls
-var gui = new dat.GUI({ autoPlace: false });
-
-var customContainer = document.getElementById('gui_container');
-customContainer.appendChild(gui.domElement);
-
-gui.add(variables, 'step').min(10).max(600).step(5).listen().onChange(function(value) { clear_button.clear();});
-gui.add(variables, 'speed').min(0.0).max(1.0).step(0.01).listen();
-gui.add(variables, 'particle_size').min(0.1).max(5).step(0.1).listen();
-gui.add(variables, 'fade').min(0.0).max(1.0).step(0.01).listen();
-gui.addColor(variables, 'colour').listen().onChange(function(value) { variables.rainbow = false;} );
-gui.add(this, 'flow');
-gui.add(random_button,'random');
-gui.add(reset_button,'reset');
-gui.add(clear_button,'clear');
-gui.close();
+// var gui = new dat.GUI({ autoPlace: false });
+//
+// var customContainer = document.getElementById('gui_container');
+// customContainer.appendChild(gui.domElement);
+//
+// gui.add(variables, 'step').min(10).max(2000).step(5).listen().onChange(function(value) { clear_button.clear();});
+// gui.add(variables, 'speed').min(0.0).max(1.0).step(0.01).listen();
+// gui.add(variables, 'particle_size').min(0.1).max(5).step(0.1).listen();
+// gui.add(variables, 'fade').min(0.0).max(1.0).step(0.01).listen();
+// gui.addColor(variables, 'colour').listen().onChange(function(value) { variables.rainbow = false;} );
+// gui.add(this, 'flow');
+// gui.add(random_button,'random');
+// gui.add(reset_button,'reset');
+// gui.add(clear_button,'clear');
+// gui.close();
 
 //
 variables.speed = 0.5;
-variables.step = 1230;
-variables.fade = 0.01;
+variables.step = 1200;
+variables.fade = 0.03       ;
 variables.particle_size = 2;
 variables.rainbow = false;
 variables.colour = '#548CBC';
 
-ctx.fillStyle = "rgb(253,242,242)";
+ctx.fillStyle = "rgba(255,255,255," + variables.fade + ")";
 ctx.fillRect(0,0,canvas_1.width, canvas_1.height);
 
 //********************** DRAW **********************
 function draw() {
+    var d = new Date();
+    var mm = d.getMinutes();
+    var ss = d.getSeconds();
+    var hh = d.getHours();
+
+    lightness = THREE.Math.mapLinear(hh,23,7,70,100);
+    saturation = THREE.Math.mapLinear(mm,0,60,40,100);
+    hue = THREE.Math.mapLinear(ss,0,60,0,360);
+
+    console.log("time: " + hh + " : " + " : " + mm + " : " + ss);
+    console.log("hsl: " + hue + " : " + " : " + saturation + " : " + lightness);
 
     //Draw over previous frame with a rectangle of variable transparency
     ctx.fillStyle = "rgba(0,0,0, "+variables.fade+")";
@@ -226,7 +241,12 @@ function draw() {
         if(variables.rainbow){
             ctx.fillStyle = discs[i].colour;
         }else{
-            ctx.fillStyle = variables.colour;
+                // ctx.fillStyle = variables.colour;
+            // ctx.fillStyle = "hsl("+ hue +"," + saturation + "," + lightness +")"
+            // ctx.fillStyle = 'hsl('+ 360*Math.random() +',100%,50%)';
+            // console.log('worked: hsl('+ 360*Math.random() +',100%,50%)');
+            // console.log('mine: hsl('+ hue +','+ saturation + ',' + lightness +')');
+            ctx.fillStyle = 'hsl(' + hue +', '+saturation+'%,'+ lightness +'%)';
         }
 
         //Find the curl of the noise field at the location of the disc (wrt the step)

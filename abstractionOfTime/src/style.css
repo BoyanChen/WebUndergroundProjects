@@ -13,12 +13,11 @@ canvas {
 
 .container{
     /*showcase*/
-    /*width:100%;*/
+    width:100%;
 
     /*for adjustment*/
-    width: 30%;
-
-    margin-left: 35%;
+    /*width: 30%;*/
+    /*margin-left: 35%;*/
 }
 
 .gui_c{
